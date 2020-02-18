@@ -47,14 +47,36 @@ productRoute.get('/v2/:id', async (req,res, next)=>{
     next()
 })
 productRoute.get('/import', async (req, res, next)=>{
-    //let path = 'src/data/catalog.json'
+    /*
+        Readying to read of file
+    */
     let path = 'src/data/object2.json'
-    // let data = readJSON('../data/object.json')
-    //let jsonData = JSON.parse(fs.readFileSync(path, 'utf-8'))
-    const values = await lerArquivo( path )
- 
+    const values: any = await lerArquivo( path )
+    let val = values.map( (v: any) =>{
+        /* Readyng fields to be inserts */
+        let sku = v.skus[0].sku
+        let name = v.skus[0].properties.name
+        let price = v.skus[0].properties.price
+        let oldPrice = v.skus[0].properties.oldPrice
+        let count = v.skus[0].properties.installment.count
+        let countPrice = v.skus[0].properties.installment.price
+        let image = v.skus[0].properties.images.default
+        let status = v.status
+        let categories = v.categories[0].name
+        let obj = [sku, name, price, oldPrice, count, countPrice, image, status, categories]
+        return obj
+    })
+
+   
     
-    res.send(values)
+    try {
+        //Sending to database
+        res.send( await service.product().saveMultiple( val ) )
+        
+    } catch (error) {
+        res.send(error)
+    }
+
     next()
     
     

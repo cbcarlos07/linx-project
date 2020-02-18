@@ -6,6 +6,20 @@ const productService = deps => {
             const action = config.save( obj )
             return action
         },
+        saveMultiple: (obj: any) =>{
+            return new Promise((resolve, reject)=>{
+                let queryString = 'INSERT INTO product VALUES ?'
+                let queryData = [obj]
+                conn.getConnection((error, connection)=>{
+                    if(error) reject(error)
+                    connection.query(queryString, queryData, (err, result)=>{
+                        connection.release()
+                        if(err) reject( err )
+                        resolve( result )
+                    })
+                })
+            })
+        },
         update: (obj: any) => {
             const action = config.update( obj )
             return action
