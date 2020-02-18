@@ -150,6 +150,7 @@ export class Config {
                                 this.errorHandler(err, `Problema ao tentar buscar em ${this.table}`, reject)
                                 return false
                             }
+                            if( results.length == 0 ) resolve({msg: 'Produto não localizado'})
                             resolve(results[0])
                         })
                     })

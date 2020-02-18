@@ -47,19 +47,14 @@ test.after.always( t => {
 
 test.serial('Show products', async t => {
     await create()
-    const list = await helperModule.all()
-    t.is( list.length, 1  )
+    const obj = await helperModule.all()
+    t.is( obj.length, 1  )
 })
-/*
-import 'jest'
-import * as request from 'supertest'
 
-let address: string = (<any>global).address
+test.serial('Find product', async t => {
+    await create()
+    const obj = await helperModule.find( 992563 )
 
-test('all products', ()=>{
-    return request(address)
-                .get('/api/product/all')
-                .then( response =>{
-                    expect(response.status).toBe(200)
-                })
-})*/
+    t.is( obj.sku, 992563  )
+})
+ 

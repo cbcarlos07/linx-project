@@ -4,17 +4,19 @@ import cors from '../utils/cors'
 
 class Application {
     port: any
+    host: any
     server: any
 
     constructor(){
         this.port = process.env.SERVER_PORT
+        this.host = process.env.SERVER_HOST
         this.server = restify.createServer()
     }
 
     listen(){
         this.configCors()
         this.configRoutes()
-        this.server.listen( this.port, () =>{
+        this.server.listen( this.port, this.host, () =>{
             console.log(`Server is listening on port ${this.port}`)
         })
     }

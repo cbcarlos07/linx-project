@@ -24,7 +24,7 @@ productRoute.get('/all', async (req,res, next)=>{
     next()
 })
 
-productRoute.get('/v1/:id', async (req,res, next)=>{
+productRoute.get('/v1/:sku', async (req,res, next)=>{
     const { sku } = req.params
     try {
         res.send( await service.product().find( sku ) )
@@ -36,7 +36,7 @@ productRoute.get('/v1/:id', async (req,res, next)=>{
     
     
 })
-productRoute.get('/v2/:id', async (req,res, next)=>{
+productRoute.get('/v2/:sku', async (req,res, next)=>{
     const { sku } = req.params
     try {
         res.send( await service.product().find( sku ) )
