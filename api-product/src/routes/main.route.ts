@@ -3,7 +3,6 @@ const Router = route.Router
 const mainRoute = new Router()
 
 /*  Este arquivo contem a rota principal 
-
     https://wishlist.neemu.com/onsite/impulse-core/ranking/mostpopular.json
     https://wishlist.neemu.com/onsite/impulse-core/ranking/pricereduction.json
 */

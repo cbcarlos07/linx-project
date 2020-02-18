@@ -1,6 +1,6 @@
 const productService = deps => {
     const {conn, config} = deps
-    config.setTable( 'alerta' )
+    config.setTable( 'product' )
     return {
         save: (obj: any) => {
             const action = config.save( obj )

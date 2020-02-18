@@ -1,4 +1,3 @@
-
 import * as restify from 'restify'
 import routes from "../routes"
 import cors from '../utils/cors'

@@ -4,15 +4,31 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "ava --verbose",
     "dev": "nodemon --watch \"src/\" --exec \"ts-node src/index.ts\" -e ts",
     "dev1": "nodemon dist/index.js"
+  },
+  "ava": {
+    "files": [
+      "src/**/*.test.ts"
+    ],
+    "babel": {
+      "compileEnhancements": false
+    },
+    "extensions": [
+      "ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ]
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@ava/babel": "^1.0.1",
     "@types/line-reader": "0.0.28",
+    "ava": "^3.3.0",
     "body-parser": "^1.19.0",
     "dotenv": "^8.2.0",
     "json-server": "^0.16.0",
@@ -25,6 +41,7 @@
     "restify-router": "^0.5.1"
   },
   "devDependencies": {
+    "@ava/typescript": "^1.1.1",
     "@types/body-parser": "^1.19.0",
     "@types/dotenv": "^8.2.0",
     "@types/mysql": "^2.15.8",

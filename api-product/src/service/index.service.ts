@@ -7,4 +7,3 @@ const conn = config.connection()
 export default {
     product: () => productService( {conn, config} )
 }
-
