@@ -30,14 +30,16 @@ mainRoute.get('/maxproducts/:max', async (req, res, next)=>{
 	let valuesPrice = await getValues( priceReduction )
 	
 	let returnedMost = await Promise.all( valuesMost )
-	
-	
-	let returnedPrice = await Promise.all( valuesPrice )
 
+	let most = returnedMost.filter( (v: any) => v != null )
+	
+	/* Tratando valores  */
+	let returnedPrice = await Promise.all( valuesPrice )
+	let price = returnedPrice.filter( (v: any) => v !=  null )
 
 	let obj = {
-		mostpopular: returnedMost.slice(0, maxParam),
-		pricereduction: returnedPrice.slice(0, maxParam)
+		mostpopular: most.slice(0, maxParam),
+		pricereduction: price.slice(0, maxParam)
 	}
 
 
@@ -51,6 +53,7 @@ mainRoute.get('/maxproducts/:max', async (req, res, next)=>{
 const searchProduct = (id: number) =>{
 	return new Promise((resolve, reject)=> {
 		request.get( `http://localhost:4000/api/product/v1/${id}`,(error, response, body) =>{
+			
 			resolve( JSON.parse( body ) )	
 		})
 	})
@@ -59,8 +62,11 @@ const searchProduct = (id: number) =>{
 const  getValues = (recommendation) =>{
 	return recommendation.map( async (v: any) =>{
 		/* Buscando dados na api de produtos */
-		let apiData = await searchProduct( v.recommendedProduct.id )
-		return apiData
+		let apiData: any = await searchProduct( v.recommendedProduct.id )
+	
+		if( apiData.status == 'AVAILABLE'){
+			return apiData
+		}
 	})
 }
 
