@@ -1,7 +1,6 @@
 import * as restify from 'restify'
 import routes from "../routes"
 import cors from '../utils/cors'
-import * as bodyParser from 'body-parser'
 
 class Application {
     port: any
@@ -25,8 +24,6 @@ class Application {
     configCors(){
         this.server.pre( cors.preflight )
         this.server.use( cors.actual )
-        this.server.use( bodyParser.json() )
-        this.server.use( bodyParser.urlencoded({extended: true}) )
     }
 
     configRoutes(){

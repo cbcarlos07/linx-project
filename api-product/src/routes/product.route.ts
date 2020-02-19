@@ -15,6 +15,12 @@ productRoute.get('', (req, res, next)=>{
     next()
 })
 
+productRoute.post('', async (req, res, next)=>{
+    res.send( await service.product().save( req.body ) )
+    next()
+})
+
+
 productRoute.get('/all', async (req,res, next)=>{
     try {
         res.send( await service.product().all() )
@@ -82,6 +88,8 @@ productRoute.get('/import', async (req, res, next)=>{
     
 })
 
+//Função responsável de ler o arquivo json
+
 const lerArquivo = async  (path) => {
    return  new Promise((resolve, reject) =>{
         let arrLine = []
@@ -100,8 +108,6 @@ const lerArquivo = async  (path) => {
         
         
     })
-//    console.log('dados', await dados);
-    
     
 }
 
