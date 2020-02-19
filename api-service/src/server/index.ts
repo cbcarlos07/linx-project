@@ -20,7 +20,7 @@ class Application {
         this.server = restify.createServer()
         this.io = socketServer.listen( this.server.server )
         
-        this.socket = socketClient.connect( `http://${this.ipLocal}:4000` )
+        this.socket = socketClient.connect( `http://api_product:4000` )
     }
 
     listen(){
@@ -28,7 +28,6 @@ class Application {
         this.configCors()
         this.configRoutes()
         this.server.listen( this.port, this.host, () =>{
-          //  addData()
             console.log(`Server is listening on port ${this.port}`)
         })
     }

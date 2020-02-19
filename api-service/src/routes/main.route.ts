@@ -52,7 +52,11 @@ mainRoute.get('/maxproducts/:max', async (req, res, next)=>{
 
 const searchProduct = (id: number) =>{
 	return new Promise((resolve, reject)=> {
-		request.get( `http://localhost:4000/api/product/v1/${id}`,(error, response, body) =>{
+		request.get( `http://api_product:4000/api/product/v1/${id}`,(error, response, body) =>{
+			if( error ){
+				console.log('err',error);
+				
+			}
 			
 			resolve( JSON.parse( body ) )	
 		})

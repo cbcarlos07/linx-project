@@ -1,0 +1,16 @@
+version: "3"
+
+services: 
+    api_recommendation:
+        build: .
+        command: npm run dev
+        container_name: api_recommendation
+        ports: 
+            - 4001:4001
+        volumes: 
+            - .:/usr/app
+networks:
+    default:
+        external:
+            name: linx-network
+            
