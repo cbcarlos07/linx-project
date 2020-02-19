@@ -38,7 +38,8 @@
     "nodemon": "^2.0.2",
     "restify": "^8.5.1",
     "restify-cors-middleware": "^1.1.1",
-    "restify-router": "^0.5.1"
+    "restify-router": "^0.5.1",
+    "socket.io": "^2.3.0"
   },
   "devDependencies": {
     "@ava/typescript": "^1.1.1",
@@ -49,6 +50,7 @@
     "@types/node": "^13.7.1",
     "@types/restify": "^8.4.2",
     "@types/restify-cors-middleware": "^1.0.1",
+    "@types/socket.io": "^2.1.4",
     "ts-node": "^8.6.2",
     "typescript": "^3.7.5"
   }

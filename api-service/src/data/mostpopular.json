@@ -1,15 +1,1 @@
-
-[
-	{
-		"weight": 37.63902282714844,
-		"recommendedProduct": {
-			"id": "992563"
-		}
-	},
-	{
-		"weight": 28.3293514251709,
-		"recommendedProduct": {
-			"id": "2219"
-		}
-	}
-]
+[{"weight":25.41168975830078,"recommendedProduct":{"id":"2219"}},{"weight":19.74728775024414,"recommendedProduct":{"id":"4537"}},{"weight":0,"recommendedProduct":{"id":1}}]

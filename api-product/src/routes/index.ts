@@ -11,8 +11,10 @@ const initRoute = new Router()
 Importando rotas
 */
 import mainRoute from './main.route'
-import productRoute from './product.route'
-const routes = server =>{
+import {productRoute, productRoutes} from './product.route'
+const routes = deps =>{
+    const {server, io} = deps
+    productRoutes( io )
     router.add('/product', productRoute)
     
     initRoute.add('/', mainRoute)

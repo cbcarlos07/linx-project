@@ -1,6 +1,8 @@
 import * as route from 'restify-router' 
 import * as request from 'request'
 import * as fs from 'fs'
+let mostpopular =  require( '../data/mostpopular.json' )
+let priceReduction =  require( '../data/pricereduction.json' )
 const Router = route.Router
 const mainRoute = new Router()
 
@@ -10,7 +12,12 @@ https://wishlist.neemu.com/onsite/impulse-core/ranking/pricereduction.json
 */
 
 
-mainRoute.get('', async (req, res, next)=>{
+mainRoute.get('/maxproducts/:max', async (req, res, next)=>{
+
+	const { max } = req.params
+
+	let maxParam = max < 10 ? 10 : max
+
 	/*
 	####################################################
 	#                                                  #
@@ -18,41 +25,42 @@ mainRoute.get('', async (req, res, next)=>{
 	#                                                  # 
 	####################################################
 	*/
-	let path = 'src/data/mostpopular.json'
-	const data: any = await lerArquivo( path )
-	let values = data.map( async (v: any) =>{
-		/* Buscando dados na api de produtos */
-		let apiData = await searchProduct( v.recommendedProduct.id )
-		return apiData
-		
 	
-	})
-	let returnedData = await Promise.all( values )
-	res.send( returnedData )
+	let valuesMost = await getValues( mostpopular )
+	let valuesPrice = await getValues( priceReduction )
+	
+	let returnedMost = await Promise.all( valuesMost )
+	
+	
+	let returnedPrice = await Promise.all( valuesPrice )
+
+
+	let obj = {
+		mostpopular: returnedMost.slice(0, maxParam),
+		pricereduction: returnedPrice.slice(0, maxParam)
+	}
+
+
+	res.send( obj )
 	//res.send({msg: 'Bem vindo a API Serviço de Recomendação'})
 	next()
 })
 
-//Função responsável de ler o arquivo json
 
-const lerArquivo = async  (path) => {
-	return  new Promise((resolve, reject) =>{
-		let content = ''
-		
-		fs.readFile( path, (err, data) =>{
-			content = JSON.parse(data.toString())
-			resolve( content )
-		})
-		
-	})
-	
-}
 
 const searchProduct = (id: number) =>{
 	return new Promise((resolve, reject)=> {
 		request.get( `http://localhost:4000/api/product/v1/${id}`,(error, response, body) =>{
 			resolve( JSON.parse( body ) )	
 		})
+	})
+}
+
+const  getValues = (recommendation) =>{
+	return recommendation.map( async (v: any) =>{
+		/* Buscando dados na api de produtos */
+		let apiData = await searchProduct( v.recommendedProduct.id )
+		return apiData
 	})
 }
 

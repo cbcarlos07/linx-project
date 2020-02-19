@@ -8,7 +8,10 @@ const productRoute = new Router()
 https://wishlist.neemu.com/onsite/impulse-core/ranking/mostpopular.json
 https://wishlist.neemu.com/onsite/impulse-core/ranking/pricereduction.json
 */
-
+var io: any
+const productRoutes = socket => {
+    io = socket
+}
 
 productRoute.get('', (req, res, next)=>{
     res.send({msg: 'Bem vindo a API de serviços produtos'})
@@ -17,6 +20,12 @@ productRoute.get('', (req, res, next)=>{
 
 productRoute.post('', async (req, res, next)=>{
     res.send( await service.product().save( req.body ) )
+    next()
+})
+
+productRoute.post('/recommended', async (req, res, next)=>{  
+    io.emit( 'recommended', req.body )
+    res.send( req.body )
     next()
 })
 
@@ -111,4 +120,4 @@ const lerArquivo = async  (path) => {
     
 }
 
-export default  productRoute
+export   {productRoute, productRoutes }

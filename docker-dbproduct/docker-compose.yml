@@ -1,6 +1,6 @@
 version: "3.3"
 services:
-   db_products:
+  db_products:
     image: mysql:8.0.1
     container_name: db_products
     environment: 
@@ -16,7 +16,7 @@ services:
     ports:
        - 8080:80
     links: 
-      - mysql:db
+      - db_products:db
 networks:
    default:
       external:
