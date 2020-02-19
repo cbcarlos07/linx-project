@@ -1,13 +1,13 @@
 version: "3.3"
 services:
-  mysql:
+   db_products:
     image: mysql:8.0.1
     container_name: db_products
     environment: 
        MYSQL_ROOT_PASSWORD: "123"
        TZ: America/Manaus
     ports:
-       - '3306:3306'
+       - '3307:3306'
     volumes:
        - ./mysql-db:/var/lib/mysql  
   phpmyadmin:
