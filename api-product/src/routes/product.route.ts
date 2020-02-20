@@ -66,28 +66,12 @@ productRoute.get('/import', async (req, res, next)=>{
     /*
         Readying to read of file
     */
-    let path = 'src/data/object2.json'
-    const values: any = await lerArquivo( path )
-    let val = values.map( (v: any) =>{
-        /* Readyng fields to be inserts */
-        let sku = v.skus[0].sku
-        let name = v.skus[0].properties.name
-        let price = v.skus[0].properties.price
-        let oldPrice = v.skus[0].properties.oldPrice
-        let count = v.skus[0].properties.installment.count
-        let countPrice = v.skus[0].properties.installment.price
-        let image = v.skus[0].properties.images.default
-        let status = v.status
-        let categories = v.categories[0].name
-        let obj = [sku, name, price, oldPrice, count, countPrice, image, status, categories]
-        return obj
-    })
-
-   
+    
+   salvarArquivo()
     
     try {
         //Sending to database
-        res.send( await service.product().saveMultiple( val ) )
+        res.send( {msg: 'Salvando dados'} )
         
     } catch (error) {
         res.send(error)
@@ -119,6 +103,37 @@ const lerArquivo = async  (path) => {
         
     })
     
+}
+
+const salvarArquivo = async () =>{
+    let path = 'src/data/catalog.json'
+    const values: any = await lerArquivo( path )
+    let val = values.map( (v: any) =>{
+        /* Readyng fields to be inserts */
+       
+        try {
+            
+            let sku = v.skus[0].sku
+            let name = v.skus[0].properties.name
+            let price = v.skus[0].properties.price
+            let oldPrice = v.skus[0].properties.oldPrice
+            let count = v.skus[0].properties.installment.count
+            let countPrice = v.skus[0].properties.installment.price
+            let image = v.skus[0].properties.images.default 
+            let status = v.status
+            let categories = v.categories[0].name
+            let obj = [sku, name, price, oldPrice, count, countPrice, image, status, categories]
+            return obj
+        } catch (error) {
+            
+        }
+        
+    })
+
+   let insert =  await service.product().saveMultiple( val )
+   console.log('insert', insert);
+   
+
 }
 
 export   {productRoute, productRoutes }

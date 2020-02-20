@@ -11,7 +11,12 @@ const productService = deps => {
                 let queryString = 'INSERT INTO product VALUES ?'
                 let queryData = [obj]
                 conn.getConnection((error, connection)=>{
-                    if(error) reject(error)
+                    if(error) {
+                        console.log('connection', error);
+                        
+                        reject(error)
+                        return
+                    } 
                     connection.query(queryString, queryData, (err, result)=>{
                         connection.release()
                         if(err) reject( err )

@@ -6,8 +6,8 @@
     "dd_object": {
         "name": "session_variables",
         "mysql_version_id": 80001,
-        "created": 20200102122341,
-        "last_altered": 20200102122341,
+        "created": 20200220180124,
+        "last_altered": 20200220180124,
         "hidden": false,
         "options": "avg_row_length=0;key_block_size=0;keys_disabled=0;pack_record=1;stats_auto_recalc=0;stats_sample_pages=0;",
         "columns": [
