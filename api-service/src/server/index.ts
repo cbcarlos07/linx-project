@@ -56,10 +56,7 @@ class Application {
         })
         //Esta parte está na escuta de envio de sinais da api da porta 4000
         this.socket.on('recommended', msg =>{
-            console.log('recommended', msg);
-
             if( addData( msg ) ){
-                
                 //caso os dados sejam adicionados com sucesso envia sinal para a api que se comunica com o frontend
                 this.io.emit('recommended', msg)
             }
