@@ -22,7 +22,8 @@ mainRoute.get('/maxproducts/:max', async (req, res, next)=>{
 
 	let maxParam = max < 10 ? 10 : max
 
-	request.get('http://localhost:4001/api/ranking', (error, response, body)=>{
+	request.get(`http://${process.env.SERVER_API}:4001/api/ranking`, (error, response, body)=>{
+	
 		if(error){
 			res.send( JSON.parse( error ) )
 		}

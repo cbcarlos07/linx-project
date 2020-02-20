@@ -1,10 +1,10 @@
 version: "3"
 
 services: 
-    api_recommendation:
+    api_service:
         build: .
         command: npm run dev
-        container_name: api_recommendation
+        container_name: api_service
         ports: 
             - 4001:4001
         volumes: 
