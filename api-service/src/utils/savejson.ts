@@ -12,7 +12,7 @@ const addData = (product) => {
     if( product.type == 'most' ){
 
         obj = {
-            "weight": 0,
+            "weight": product.weight,
             "recommendedProduct": {
                 "id": product.id
             }

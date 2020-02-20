@@ -25,6 +25,7 @@ productRoute.post('', async (req, res, next)=>{
 
 productRoute.post('/recommended', async (req, res, next)=>{  
     io.emit( 'recommended', req.body )
+    
     res.send( req.body )
     next()
 })

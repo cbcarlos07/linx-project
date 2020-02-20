@@ -12,11 +12,9 @@ https://wishlist.neemu.com/onsite/impulse-core/ranking/pricereduction.json
 */
 
 
-mainRoute.get('/maxproducts/:max', async (req, res, next)=>{
+mainRoute.get('', async (req, res, next)=>{
 
-	const { max } = req.params
 
-	let maxParam = max < 10 ? 10 : max
 
 	/*
 	####################################################
@@ -30,16 +28,12 @@ mainRoute.get('/maxproducts/:max', async (req, res, next)=>{
 	let valuesPrice = await getValues( priceReduction )
 	
 	let returnedMost = await Promise.all( valuesMost )
-
-	let most = returnedMost.filter( (v: any) => v != null )
-	
-	/* Tratando valores  */
 	let returnedPrice = await Promise.all( valuesPrice )
-	let price = returnedPrice.filter( (v: any) => v !=  null )
+	
 
 	let obj = {
-		mostpopular: most.slice(0, maxParam),
-		pricereduction: price.slice(0, maxParam)
+		mostpopular: returnedMost,
+		pricereduction: returnedPrice
 	}
 
 
@@ -67,10 +61,7 @@ const  getValues = (recommendation) =>{
 	return recommendation.map( async (v: any) =>{
 		/* Buscando dados na api de produtos */
 		let apiData: any = await searchProduct( v.recommendedProduct.id )
-	
-		if( apiData.status == 'AVAILABLE'){
-			return apiData
-		}
+		return apiData
 	})
 }
 
