@@ -122,7 +122,10 @@ ul {
     justify-content: center;
       
   }
-
+  .title{
+    font-size: 25px;
+    color: #3D2150;
+  }
 
   .title-most{
     font-family:"Abadi MT Condensed Light";
@@ -132,8 +135,7 @@ ul {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    color: #3D2150;
- 
+    
   }
 
   .title-price{
@@ -144,7 +146,6 @@ ul {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    color: #3D2150;
   }
 
   .itens-most{
@@ -197,6 +198,10 @@ ul {
     padding-left: 40px;
     padding-right: 40px;
     display: none;
+  }
+
+  .box{
+    padding-right: 2px;
   }
 
   
