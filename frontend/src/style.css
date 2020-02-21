@@ -10,7 +10,60 @@ ul {
     list-style: none;
   }
   
-  button.prev, button.next {
+  a.prev {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    color: #DE682F;
+    /*background-color: #333; */
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    text-decoration: none;
+  }
+
+  a.next {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    color: #DE682F;
+    /*background-color: #333; */
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    text-decoration: none;
+  }
+
+
+  a.prev2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    color: #DE682F;
+    /*background-color: #333; */
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    text-decoration: none;
+  }
+
+  a.next2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    color: #DE682F;
+    /*background-color: #333; */
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    text-decoration: none;
+  }
+
+  /*button.prev, button.next {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -20,31 +73,134 @@ ul {
     border-radius: 50%;
     width: 44px;
     height: 44px;
+  }*/
+  a.prev {
+    position: absolute;
+    left: 19%;
+    top: 135px;
   }
-  button.prev {
+  a.next {
+    position: absolute;
+    right: 19%;
+    top: 135px;
+  }
+
+  /*button.prev {
     position: absolute;
     left: 19%;
     top: 80px;
+  }*/
+
+  a.prev2 {
+    position: absolute;
+    left: 19%;
+    top: 520px;
   }
-  button.next {
+
+  a.next2 {
     position: absolute;
     right: 19%;
-    top: 80px;
+    top: 520px;
   }
 
   .most{
-      width: 60%;
-      margin: 0;
-      left: 20%;
-      margin-right: -50%;
-      position: relative;
+    margin-top: 14px;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+      
   }
 
-  .title-most{
-    font-family:"Arial, Helvetica, sans-serif";
-    margin: 0;
-    left: 50%;
-    margin-right: -50%;
-    padding: 20px;
-    position: relative;
+  .precos-baixos{
+    margin-top: 10px;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+      
   }
+
+
+  .title-most{
+    font-family:"Abadi MT Condensed Light";
+    margin-top: 40px;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: #3D2150;
+ 
+  }
+
+  .title-price{
+    font-family:"Abadi MT Condensed Light";
+    margin-top: 40px;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: #3D2150;
+  }
+
+  .itens-most{
+    margin: 0 auto;
+    width: 58%; /* Valor da Largura */
+    text-align: center;
+   }
+
+  .title-price{
+    margin: 0 auto;
+    width: 50%; /* Valor da Largura */
+    text-align: center;
+  }
+
+  
+  .itens-price{
+    margin: 0 auto;
+    width: 58%; /* Valor da Largura */
+    text-align: center;
+  }
+
+  .produto{
+    padding-left: 10px;
+    text-align: left;
+    color: #3D2150;
+    font-family:"Abadi MT Condensed Light";
+  }
+
+  .descricao{
+    color: gray;
+    font-size: 17px;
+    white-space: normal
+  }
+  .old{
+    color: gray;
+    font-size: 14px;
+  }
+  .preco{
+    font-size: 25px;
+  }
+  .parcela{
+    font-size: 18px;
+  }
+
+  .alerta{
+    margin-left: 55px;
+    font-family:"Abadi MT Condensed Light";
+    color: #fff;
+    background-color:  #3D2150;
+    padding-left: 40px;
+    padding-right: 40px;
+    display: none;
+  }
+
+  
+
+  
+
+  

@@ -8,27 +8,83 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="most">
+    <span class="alerta">Suas recomendações acabaram de sofrer uma atualização. Confira!</span>
+    <div class="recommendations">
         <span class="title-most">Mais Vendidos</span>
-        <div class="itens-most">
-            <ul>
-                <li><img class="img1" src="http://picsum.photos/300/200?1"></li>
-                <li><img class="img2" src="http://picsum.photos/300/200?2"></li>
-                <li><img class="img3" src="http://picsum.photos/300/200?3"></li>
-                <li><img class="img4" src="http://picsum.photos/300/200?4"></li>
-                <li><img class="img5" src="http://picsum.photos/300/200?5"></li>
-                <li><img class="img6" src="http://picsum.photos/300/200?6"></li>
-                <li><img class="img7" src="http://picsum.photos/300/200?7"></li>
-                <li><img class="img8" src="http://picsum.photos/300/200?8"></li>
-                <li><img class="img9" src="http://picsum.photos/300/200?9"></li>
-            </ul>
+        <div class="most">
+            <div class="itens-most">
+                <ul>
+                    <li>
+                        <div class="box">
+                            <img class="img1" src="http://picsum.photos/300/200?1" >
+                            <div class="produto">
+                                <span class="descricao">Esta deve ser uma descrição grande do produto para testar quebra de linha</span><br><br>
+                                <span class="old"> <del>R$ 140,00</del> </span><br>
+                                <span class="preco">Por R$ 399,90</span><br>
+                                <span class="parcela">10x de R$ 39,90</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="box">
+                            <img class="img2" src="http://picsum.photos/300/200?2" >
+                            <div class="produto">
+                                <span class="descricao">Descrição do Produto</span><br><br>
+                                <span class="old"> <del>R$ 140,00</del> </span><br>
+                                <span class="preco">Por R$ 399,90</span><br>
+                                <span class="parcela">10x de R$ 39,90</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="box">
+                            <img class="img3" src="http://picsum.photos/300/200?3">
+                            <div class="produto">
+                                <span class="descricao">Descrição do Produto</span><br><br>
+                                <span class="old"> <del>R$ 140,00</del> </span><br>
+                                <span class="preco">Por R$ 399,90</span><br>
+                                <span class="parcela">10x de R$ 39,90</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li><img class="img4" src="http://picsum.photos/300/200?4"></li>
+                    <li><img class="img5" src="http://picsum.photos/300/200?5"></li>
+                    <li><img class="img6" src="http://picsum.photos/300/200?6"></li>
+                    <li><img class="img7" src="http://picsum.photos/300/200?7"></li>
+                    <li><img class="img8" src="http://picsum.photos/300/200?8"></li>
+                    <li><img class="img9" src="http://picsum.photos/300/200?9"></li>
+                </ul>
+            </div>
+        </div>
+        <br>
+        <br>
+        <span class="title-price">Produtos que baixaram de preço</span>
+        <div class="precos-baixos">
+            <div class="itens-price">
+                    <ul>
+                        <li><img class="img1" src="http://picsum.photos/300/200?1"></li>
+                        <li><img class="img2" src="http://picsum.photos/300/200?2"></li>
+                        <li><img class="img3" src="http://picsum.photos/300/200?3"></li>
+                        <li><img class="img4" src="http://picsum.photos/300/200?4"></li>
+                        <li><img class="img5" src="http://picsum.photos/300/200?5"></li>
+                        <li><img class="img6" src="http://picsum.photos/300/200?6"></li>
+                        <li><img class="img7" src="http://picsum.photos/300/200?7"></li>
+                        <li><img class="img8" src="http://picsum.photos/300/200?8"></li>
+                        <li><img class="img9" src="http://picsum.photos/300/200?9"></li>
+                    </ul>
+            </div>
         </div>
     </div>
 
-    <button class="prev" onclick="show(-3)">&lt;</button>
-    <button class="next" onclick="show(+3)">&gt;</button>
+    <a href="#prev" class="prev" onclick="show(-3)">&lt;</a>
+    <a href="#next" class="next" onclick="show(+3)">&gt;</a>
 
+    <a href="#prev1" class="prev2" onclick="show1(-3)">&lt;</a>
+    <a href="#next1" class="next2" onclick="show1(+3)">&gt;</a>
+    <script src="src/jquery-3.4.1.min.js"></script>
+    <script src="src/socket.io.js"></script>
     <script src="src/imagens.js"></script>
+    <script src="src/escuta.js"></script>
       
 </body>
 </html>
