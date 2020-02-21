@@ -106,7 +106,7 @@ const lerArquivo = async  (path) => {
 }
 
 const salvarArquivo = async () =>{
-    let path = 'src/data/catalog.json'
+    let path = 'src/data/object1.json'
     const values: any = await lerArquivo( path )
     let val = values.map( (v: any) =>{
         /* Readyng fields to be inserts */
