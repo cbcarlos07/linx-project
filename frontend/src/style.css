@@ -77,12 +77,12 @@ ul {
   a.prev {
     position: absolute;
     left: 19%;
-    top: 135px;
+    top: 150px;
   }
   a.next {
     position: absolute;
     right: 19%;
-    top: 135px;
+    top: 150px;
   }
 
   /*button.prev {
@@ -94,13 +94,13 @@ ul {
   a.prev2 {
     position: absolute;
     left: 19%;
-    top: 520px;
+    top: 560px;
   }
 
   a.next2 {
     position: absolute;
     right: 19%;
-    top: 520px;
+    top: 560px;
   }
 
   .most{
