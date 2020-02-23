@@ -1,8 +1,8 @@
 # Desafio Proposto pela Linx Impulse
 
 ## Sumário
-[1. Intrudução](#intro)
-[1. Banco de Dados](#db)
+### [1. Intrudução](#intro)
+### [2. Banco de Dados](#db)
 
 ## 1. <a name="intro"> Introdução
 Este foi um desafio proposto pela empresa Linx Impulse para desenvolve um projeto onde tenha apis e frontends 
