@@ -7,6 +7,8 @@
 ### [4. API de Microsserviço](#service)
 ### [5. API de Recomendação](#remmendation)
 ### [6. Realtime](#realtime)
+### [7. Conclusão](#finished)
+
 
 ## 1. <a name="intro"> Introdução
 Este foi um desafio proposto pela empresa Linx Impulse para desenvolve um projeto onde tenha apis e frontends 
@@ -98,9 +100,29 @@ A api de catálogo é composta das seguintes rotas:
 
 A página frontend está sincronizada com a **API de Recomendação**.
 
-Quando um item é adicionado na [API de Catálogo](#endpoint) no endpoint : `/api/product/recommended`, esse sinal percorre todas as apis até chegar no frontend e automaticamente atualiza a lista de produtos da vitrine
+Quando um item é adicionado na [API de Catálogo](#endpoint) no endpoint : `/api/product/recommended`, esse sinal percorre todas as apis até chegar no frontend e automaticamente atualiza a lista de produtos da vitrine, comendaçando pela API de Catálogo, Salvando no JSON da API de Microsserviço, enviando para API de Recomendação que entrega para o front end, conforme imagem abaixo:
 
 ![Image description](https://github.com/cbcarlos07/linx-project/blob/master/frontend/teste8.gif)
+
+## 7 <a name="teste">Teste Unitários
+
+A **API de Produtos** possui testes unitários
+
+**ATENÇÃO**
+
+O teste unitário remove todos os dados da base de dados e adiciona apenas um para testes, certifique-se de testar em banco de dados de homologação (de teste)
+
+Para executar o teste unitário é necessário acessar a pasta do projeto chamada `api-catalog` e executar o seguinte comando
+    
+        npm test
+
+A API irá testar a listagem dos produtos e a busca de um único produto pelo código
+
+## 8. <a name="finished">Conclusão
+
+Algumas coisas não foram implementadas, como testes de redes, mas é mais um motivo para dar uma pesquisada de como implementar tal recurso.
+
+No geral fizemos o possível para entregar um produto o mais fiel possível ao que foi solicitado
 
 
 
