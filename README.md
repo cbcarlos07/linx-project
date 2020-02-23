@@ -57,7 +57,7 @@ A api de catálogo é composta das seguintes rotas:
 
 * / -> (get) Onde tem as boas vindas da api
 * /api/product -> (get) Onde tem as boas vindas do endpoint produtos
-* /api/product/ -> (post), é a opção para inserção de produto no bandos o seguintes objeto
+* /api/product/ -> (post) é a opção para inserção de produto no bandos o seguintes objeto
 
         {
             sku: codigo,
