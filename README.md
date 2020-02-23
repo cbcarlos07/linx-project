@@ -1,13 +1,13 @@
 # Desafio Proposto pela Linx Impulse
 
 ## <a name="sumario">Sumário
-**[1. Intrudução](#intro)**
-**[2. Banco de Dados](#db)**
-**[3. API de Catálogo](#catalogo)**
-**[4. API de Microsserviço](#service)**
-**[5. API de Recomendação](#remmendation)**
-**[6. Realtime](#realtime)**
-**[7. Conclusão](#finished)**
+### [1. Intrudução](#intro)
+### [2. Banco de Dados](#db)
+### [3. API de Catálogo](#catalogo)
+### [4. API de Microsserviço](#service)
+### [5. API de Recomendação](#remmendation)
+### [6. Realtime](#realtime)
+### [7. Conclusão](#finished)
 
 
 ## 1. <a name="intro"> Introdução
