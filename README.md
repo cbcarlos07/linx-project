@@ -55,7 +55,7 @@ Esta api na porta 4000.
 
 A api de catálogo é composta das seguintes rotas:
 
-* / -> Onde tem as boas vindas da api
+* / -> (get) Onde tem as boas vindas da api
 * /api/product -> (get)Onde tem as boas vindas do endpoint produtos
 * /api/product/ -> (post), é a opção para inserção de produto no bandos o seguintes objeto
 
