@@ -11,11 +11,11 @@
 
 
 ## 1. <a name="intro"> Introdução
-Este foi um desafio proposto pela empresa Linx Impulse para desenvolve um projeto onde tenha apis e frontends 
+Este foi um desafio proposto pela empresa **Linx Impulse** para desenvolver um projeto onde tenha apis e frontends 
 
 Algumas das apis foram criadas usando container do docker-compose
 
-Eis o conteúdo do desafio
+Eis o conteúdo do desafio:
 
 * db_product
 * api_catalog
@@ -35,7 +35,11 @@ O projeto foi desenvolvido utilizando o Banco de Dados MYSQL versão no docker-c
 
 A porta usada foi a 3307
 
-**ATENÇÃO:**
+O banco de dados usado foi o `linx`
+
+        CREATE DATABASE linx
+
+**ATENÇÃO!!**
 
 Antes de "subir" o container do banco dados faz-se necessário criar uma rede virtual usando o docker utilizando o seguinte comando
 
@@ -47,13 +51,13 @@ Antes de "subir" o container do banco dados faz-se necessário criar uma rede vi
 
 ## 3 <a name="catalogo"> API de Catálogo
 
-Esta api na porta 4000
+Esta api na porta 4000.
 
 A api de catálogo é composta das seguintes rotas:
 
 * / -> Onde tem as boas vindas da api
-* /api/product -> Onde tem as boas vindas do endpoint produtos
-* /api/product/ -> Com o verbo post, é a opção para inserção de produto no bandos o seguintes objeto
+* /api/product -> (get)Onde tem as boas vindas do endpoint produtos
+* /api/product/ -> (post), é a opção para inserção de produto no bandos o seguintes objeto
 
         {
             sku: codigo,
@@ -67,7 +71,7 @@ A api de catálogo é composta das seguintes rotas:
             categories: categoria do produtoi
         }
 
-* <a name="endpoint"> /api/product/recommended -> post -> é a opção para adicionar na api microserviço a lista de recomendações. Para adicionar é preciso enviar o seguinte objeto
+* <a name="endpoint"> /api/product/recommended -> (post) é a opção para adicionar na api microsserviço a lista de recomendações. Para adicionar é preciso enviar o seguinte objeto
 
         {
             "weight": 2.001,
@@ -76,10 +80,10 @@ A api de catálogo é composta das seguintes rotas:
         }
 Ao executar esta ação a api irá adicionar um item no arquivo json conforme o tipo informado no atributo type na api de microsserviço   
 
-* /api/product/all -> Lista todos os produtos
-* /api/product/v1/12347 - (complete) O numero é codigo do produto a ser informado, este endoint traz o produto selecionado com todos os campos do banco de dados
-* /api/product/v2/123 -> (compact) O numero é codigo do produto a ser informado, este endoint traz apenas os campos name, price, status e categories;
-* /api/product/import -> importa produtos do arquivos json. Como o arquivo enviado estava dando problema, foi necessário criar outro com algumas centenas de itens, chama-se `object1.json`([Clique aqui](https://raw.githubusercontent.com/cbcarlos07/linx-project/master/api-catalog/src/data/object1.json) para visualizá-lo )
+* /api/product/all -> (get) Lista todos os produtos
+* /api/product/v1/12347 -> (get) (complete) O numero é codigo do produto a ser informado, este endoint traz o produto selecionado com todos os campos do banco de dados
+* /api/product/v2/123 -> (get) (compact) O numero é codigo do produto a ser informado, este endoint traz apenas os campos name, price, status e categories;
+* /api/product/import -> (get) importa produtos do arquivos json. Como o arquivo enviado estava dando problema, foi necessário criar outro com algumas centenas de itens, chama-se `object1.json`([Clique aqui](https://raw.githubusercontent.com/cbcarlos07/linx-project/master/api-catalog/src/data/object1.json) para visualizá-lo )
 
 [Voltar ao início](#sumario)
 
@@ -89,7 +93,7 @@ Esta api na porta 4001
 
 A api de catálogo é composta das seguintes rotas:
 
-* /api/ranking -> Traz todas as recomendações organizada por `mostpopular` e `pricereduction`. Este endpoint busca dos respectivos arquivos em json e monta um retorno para a api de recomendação consultar os dados. 
+* /api/ranking -> (get) Traz todas as recomendações organizada por `mostpopular` e `pricereduction`. Este endpoint busca dos respectivos arquivos em json e monta um retorno para a api de recomendação consultar os dados. 
 Este endpoint também se comunica com a api de catálogo para trazer os nomes do respectivos produtos salvos no arquivos json
 
 [Voltar ao início](#sumario)
@@ -100,7 +104,7 @@ Esta api na porta 4002
 
 A api de catálogo é composta das seguintes rotas:
 
-* /api/ranking/maxproducts/9 -> Onde o numero 9 é o número de itens que eu quero que retorne, caso seja menor que 10 o número será ignorado e a api trará 10 resultados
+* /api/ranking/maxproducts/9 -> (get) Onde o numero 9 é o número de itens que eu quero que retorne, caso seja menor que 10 o número será ignorado e a api trará 10 resultados
 
 * /api/ranking/vitrine -> Carrega os ultimos 16 registros atualizados na api de microsserviço 
 

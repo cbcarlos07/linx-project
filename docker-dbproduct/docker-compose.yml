@@ -10,7 +10,7 @@ services:
        - '3307:3306'
     volumes:
        - ./mysql-conf/mysql:/etc/mysql
-       - ./mysql-db:/var/lib/mysql 
+       - mysql-db:/var/lib/mysql 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:latest
     container_name: phpmyadmin
@@ -22,3 +22,5 @@ networks:
    default:
       external:
          name: linx-network
+volumes:
+   mysql-db:
