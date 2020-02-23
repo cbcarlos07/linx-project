@@ -1,15 +1,1 @@
-
-[
-    {
-        "weight": 25.41168975830078,
-        "recommendedProduct": {
-            "id": "992563"
-        }
-    },
-    {
-        "weight": 19.74728775024414,
-        "recommendedProduct": {
-            "id": "4537"
-        }
-    }
-]
+[{"weight":2.001,"recommendedProduct":{"id":990166}},{"weight":2.001,"recommendedProduct":{"id":990188}},{"weight":2.001,"recommendedProduct":{"id":990202}},{"weight":2.001,"recommendedProduct":{"id":990203}},{"weight":2.001,"recommendedProduct":{"id":990206}},{"weight":2.001,"recommendedProduct":{"id":990216}},{"weight":2.001,"recommendedProduct":{"id":990225}},{"weight":2.001,"recommendedProduct":{"id":990230}},{"weight":2.001,"recommendedProduct":{"id":990246}},{"weight":2.001,"recommendedProduct":{"id":990247}},{"weight":2.001,"recommendedProduct":{"id":990249}},{"weight":2.001,"recommendedProduct":{"id":990291}},{"weight":2.001,"recommendedProduct":{"id":990293}},{"weight":2.001,"recommendedProduct":{"id":990302}},{"weight":2.001,"recommendedProduct":{"id":990305}},{"weight":2.001,"recommendedProduct":{"id":990341}},{"weight":2.001,"recommendedProduct":{"id":990345}}]

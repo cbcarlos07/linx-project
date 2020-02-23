@@ -1,4 +1,4 @@
-version: "3.3"
+version: "3"
 services:
   db_products:
     image: mysql:8.0.1
@@ -9,7 +9,8 @@ services:
     ports:
        - '3307:3306'
     volumes:
-       - ./mysql-db:/var/lib/mysql  
+       - ./mysql-conf/mysql:/etc/mysql
+       - ./mysql-db:/var/lib/mysql 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:latest
     container_name: phpmyadmin

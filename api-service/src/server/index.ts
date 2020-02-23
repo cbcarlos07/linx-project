@@ -20,7 +20,7 @@ class Application {
         this.server = restify.createServer()
         this.io = socketServer.listen( this.server.server )
         
-        this.socket = socketClient.connect( `http://api_product:4000` )
+        this.socket = socketClient.connect( `http://${process.env.SERVER_API}:4000` )
     }
 
     listen(){

@@ -1,10 +1,10 @@
-version: "3"
+version: "3.3"
 
 services: 
-    product:
+    catalog:
         build: .
         command: npm run dev
-        container_name: api_product
+        container_name: api_catalog
         ports: 
             - 4000:4000
         volumes: 

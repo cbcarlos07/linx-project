@@ -1,10 +1,9 @@
 import * as route from 'restify-router' 
 import * as request from 'request'
-import * as fs from 'fs'
-let mostpopular =  require( '../data/mostpopular.json' )
-let priceReduction =  require( '../data/pricereduction.json' )
+
 const Router = route.Router
 const mainRoute = new Router()
+const server = process.env.SERVER_API
 
 /*  Este arquivo contem a rota principal 
 https://wishlist.neemu.com/onsite/impulse-core/ranking/mostpopular.json
@@ -13,7 +12,8 @@ https://wishlist.neemu.com/onsite/impulse-core/ranking/pricereduction.json
 
 
 mainRoute.get('', async (req, res, next)=>{
-
+	let mostpopular =  require( '../data/mostpopular.json' )
+	let priceReduction =  require( '../data/pricereduction.json' )
 
 
 	/*
@@ -46,7 +46,7 @@ mainRoute.get('', async (req, res, next)=>{
 
 const searchProduct = (id: number) =>{
 	return new Promise((resolve, reject)=> {
-		request.get( `http://api_product:4000/api/product/v1/${id}`,(error, response, body) =>{
+		request.get( `http://${server}:4000/api/product/v1/${id}`,(error, response, body) =>{
 			if( error ){
 				console.log('err',error);
 				

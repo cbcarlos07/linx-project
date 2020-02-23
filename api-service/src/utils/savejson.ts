@@ -9,6 +9,8 @@ const addData = (product) => {
     let dataObj = []
     let obj = {}
     let path = ''
+    console.log('save', product);
+    
     if( product.type == 'most' ){
 
         obj = {
@@ -36,6 +38,8 @@ const addData = (product) => {
     
 
     let data = JSON.stringify( dataObj )
+    console.log('data', data);
+    
 
     fs.writeFileSync( `src/${path}`, data )
     return true

@@ -1,3 +1,7 @@
+@font-face {
+  font-family: "Abadi MT Condensed Light";
+  src: url('./Abadi\ MT\ Condensed\ Light.ttf') format("truetype");
+}
 ul {
     display: flex;
     margin: 0;
@@ -205,6 +209,34 @@ ul {
   }
 
   
+  .prod-desc{
+    font-family:"Abadi MT Condensed Light";
+    color:  #3D2150;
+  }
+
+  .prod-old{
+    font-family:"Abadi MT Condensed Light";
+    color:  gray;
+  }
+
+
+  .prod-price{
+    font-family:"Abadi MT Condensed Light";
+    font-size: 25px;
+    color:  #3D2150;
+  }
+  .prod-count {
+    font-family:"Abadi MT Condensed Light";
+    font-size: 18px;
+    color:  #3D2150;
+  }
+
+  .prod-countprice {
+    font-family:"Abadi MT Condensed Light";
+    font-size: 18px;
+    color:  #3D2150;
+  }
+
 
   
 
