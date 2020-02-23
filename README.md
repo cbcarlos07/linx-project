@@ -1,13 +1,13 @@
 # Desafio Proposto pela Linx Impulse
 
-## Sumário
-### [1. Intrudução](#intro)
-### [2. Banco de Dados](#db)
-### [3. API de Catálogo](#catalogo)
-### [4. API de Microsserviço](#service)
-### [5. API de Recomendação](#remmendation)
-### [6. Realtime](#realtime)
-### [7. Conclusão](#finished)
+## <a name="sumario">Sumário
+**[1. Intrudução](#intro)**
+**[2. Banco de Dados](#db)**
+**[3. API de Catálogo](#catalogo)**
+**[4. API de Microsserviço](#service)**
+**[5. API de Recomendação](#remmendation)**
+**[6. Realtime](#realtime)**
+**[7. Conclusão](#finished)**
 
 
 ## 1. <a name="intro"> Introdução
@@ -27,6 +27,8 @@ Eis o conteúdo do desafio
 
 Este projeto funcionou em container usando docker-compose com sucesso no Sistema Operacional MAC OS 10, mas no Sistema Linux Mint (Cinamon 19.3) tivemos problemas ao testar, sendo necessário executar através do host da máquina
 
+[Voltar ao início](#sumario)
+
 ## 2. <a name="db"> Banco de Dados
 
 O projeto foi desenvolvido utilizando o Banco de Dados MYSQL versão no docker-compose
@@ -38,6 +40,10 @@ A porta usada foi a 3307
 Antes de "subir" o container do banco dados faz-se necessário criar uma rede virtual usando o docker utilizando o seguinte comando
 
     docker network create -d bridge linx-network
+
+
+[Voltar ao início](#sumario)
+
 
 ## 3 <a name="catalogo"> API de Catálogo
 
@@ -75,6 +81,7 @@ Ao executar esta ação a api irá adicionar um item no arquivo json conforme o 
 * /api/product/v2/123 -> (compact) O numero é codigo do produto a ser informado, este endoint traz apenas os campos name, price, status e categories;
 * /api/product/import -> importa produtos do arquivos json. Como o arquivo enviado estava dando problema, foi necessário criar outro com algumas centenas de itens, chama-se `object1.json`([Clique aqui](https://raw.githubusercontent.com/cbcarlos07/linx-project/master/api-catalog/src/data/object1.json) para visualizá-lo )
 
+[Voltar ao início](#sumario)
 
 ## 4 <a name="service"> API de Microsserviço de Recomendação
 
@@ -84,6 +91,8 @@ A api de catálogo é composta das seguintes rotas:
 
 * /api/ranking -> Traz todas as recomendações organizada por `mostpopular` e `pricereduction`. Este endpoint busca dos respectivos arquivos em json e monta um retorno para a api de recomendação consultar os dados. 
 Este endpoint também se comunica com a api de catálogo para trazer os nomes do respectivos produtos salvos no arquivos json
+
+[Voltar ao início](#sumario)
 
 ## 5 <a name="recommendation"> API de Recomendação
 
@@ -104,6 +113,8 @@ Quando um item é adicionado na [API de Catálogo](#endpoint) no endpoint : `/ap
 
 ![Image description](https://github.com/cbcarlos07/linx-project/blob/master/frontend/teste8.gif)
 
+[Voltar ao início](#sumario)
+
 ## 7 <a name="teste">Teste Unitários
 
 A **API de Produtos** possui testes unitários
@@ -118,12 +129,16 @@ Para executar o teste unitário é necessário acessar a pasta do projeto chamad
 
 A API irá testar a listagem dos produtos e a busca de um único produto pelo código
 
+[Voltar ao início](#sumario)
+
 ## 8. <a name="finished">Conclusão
 
 Algumas coisas não foram implementadas, como testes de redes, mas é mais um motivo para dar uma pesquisada de como implementar tal recurso.
 
 No geral fizemos o possível para entregar um produto o mais fiel possível ao que foi solicitado
 
+
+[Voltar ao início](#sumario)
 
 
     
