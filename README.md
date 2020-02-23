@@ -100,7 +100,7 @@ A página frontend está sincronizada com a **API de Recomendação**.
 
 Quando um item é adicionado na [API de Catálogo](#endpoint) no endpoint : `/api/product/recommended`, esse sinal percorre todas as apis até chegar no frontend e automaticamente atualiza a lista de produtos da vitrine
 
-![Image description](link-to-image)
+![Image description](https://github.com/cbcarlos07/linx-project/blob/master/frontend/teste8.gif)
 
 
 
