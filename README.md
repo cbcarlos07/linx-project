@@ -143,7 +143,18 @@ No geral fizemos o possível para entregar um produto o mais fiel possível ao q
 
 **OBSERVAÇÃO**
 
-Todas as APIs necessitam do arquivo .env para o bom funcionamento
+Todas as APIs necessitam do arquivo .env para o bom funcionamento.
+
+As APIs que necessitam do arquivo .env são:
+
+
+
+* [api_catalog](https://github.com/cbcarlos07/linx-project/blob/master/api-catalog/README.md)
+* [api_service](https://github.com/cbcarlos07/linx-project/blob/master/api-service/README.md)
+* [api_recommendation](https://github.com/cbcarlos07/linx-project/blob/master/api-recommendation/README.md)
+
+Clique em cada uma ou em uma delas para ver algumas instruções básicas.
+
 
 
 
