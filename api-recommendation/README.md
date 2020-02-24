@@ -1,4 +1,4 @@
-# API de Catálogo
+# API de Recomendação
 
 ## Algumas Instruções Básicas
 
