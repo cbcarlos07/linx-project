@@ -141,6 +141,11 @@ Algumas coisas não foram implementadas, como testes de redes, mas é mais um mo
 
 No geral fizemos o possível para entregar um produto o mais fiel possível ao que foi solicitado
 
+**OBSERVAÇÃO**
+
+Todas as APIs necessitam do arquivo .env para o bom funcionamento
+
+
 
 [Voltar ao início](#sumario)
 
