@@ -2,7 +2,7 @@
 
 ## Algumas Instruções Básicas
 
-Antes de executar é necessário executar o comando no terminal da pasta raiz deste projeto
+Antes de executar a aplicação é necessário executar o comando no terminal da pasta raiz deste projeto
 
         npm i
 
